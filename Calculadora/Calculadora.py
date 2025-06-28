@@ -71,6 +71,26 @@ def calcular_operacion():
     elif(len(rest)== 2):
         pantalla.set(float(rest[0]) - float(rest[1]))
 
+def calcular_porcentaje():
+    suma = pantalla.get().split('+')
+    mult = pantalla.get().split('*')
+    divi = pantalla.get().split('/')
+    rest = pantalla.get().split('-')
+    print(suma)
+    print(mult)
+    print(divi)
+    print(rest)
+    if(len(suma)== 2):
+        porcentaje = float(suma[0]) * float(suma[1]) / 100
+        pantalla.set(float(suma[0]) + porcentaje)
+    elif(len(mult)== 2):
+        pantalla.set(float(mult[0]) * float(mult[1]) / 100)
+    elif(len(divi)== 2):
+        pantalla.set(float(divi[0]) / float(divi[1]) * 100)
+    elif(len(rest)== 2):
+        porcentaje = float(rest[0]) * rest(suma[1]) / 100
+        pantalla.set(float(rest[0]) - porcentaje)
+
 def validar_caracter(t):
     try:
         if t in botones_permitidos:
@@ -111,6 +131,8 @@ def click_boton(t):
             calcular_raiz()
         elif(t == '='):
             calcular_operacion()
+        elif(t == '%'):
+            calcular_porcentaje()
 
         entrada.focus()
         entrada.icursor(tk.END)
