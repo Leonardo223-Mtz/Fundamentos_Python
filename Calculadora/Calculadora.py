@@ -53,9 +53,6 @@ def calcular_raiz():
     numero = float(pantalla.get())
     pantalla.set(numero**(0.5))
 
-def calcular_suma():
-   pass
-
 def calcular_operacion():
     suma = pantalla.get().split('+')
     mult = pantalla.get().split('*')
